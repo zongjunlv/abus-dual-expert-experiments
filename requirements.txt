@@ -1,0 +1,94 @@
+# ABUS dual-expert project dependencies
+# Supported interpreter: Python 3.8--3.10. Do not install this legacy
+# PyTorch stack into the local Python 3.14 environment.
+
+# ==================== PyTorch生态系统 ====================
+# PyTorch核心库 - 根据你的CUDA版本调整
+torch==1.13.0+cu117
+torchvision==0.14.0+cu117
+# torchaudio对于医学影像分类项目通常不需要
+
+# ==================== 深度学习框架 ====================
+# MONAI - 医学影像AI框架
+monai==1.3.0
+
+# timm - ConvNeXt implementation used by the tri-planar MIL expert
+timm==1.0.26
+
+# ==================== 数据处理 ====================
+# numpy - 数值计算
+numpy>=1.21.0,<2.0
+
+# pandas - 数据分析
+pandas>=1.3.0,<3.0
+
+# SimpleITK - 医学影像I/O
+SimpleITK>=2.1.0
+
+# nibabel - 医学影像格式支持
+nibabel>=5.0.0
+
+# scikit-image - 图像处理
+scikit-image>=0.19.0
+
+# medpy - 医学影像处理
+medpy>=0.4.0
+
+# h5py - HDF5格式支持
+h5py>=3.1.0
+
+# ==================== 机器学习 ====================
+# scikit-learn - 机器学习工具包
+scikit-learn>=1.0.0
+
+# ==================== 可视化与监控 ====================
+# matplotlib - 绘图
+matplotlib>=3.3.0
+
+# tensorboard - 可视化训练曲线的Web UI
+tensorboard>=2.10.0
+
+# tensorboardX - 训练监控
+tensorboardX>=2.0
+
+# swanlab - 实验跟踪（含本地 dashboard）
+swanlab[dashboard]>=0.6.0
+
+# ==================== 模型工具 ====================
+# einops - 张量操作
+einops>=0.4.0
+
+# thop - 模型FLOPs计算
+thop>=0.1.0
+
+# ==================== 训练工具 ====================
+# tqdm - 进度条
+tqdm>=4.62.0
+
+# submitit - 分布式训练工具
+submitit>=1.5.0
+
+# ==================== 配置管理 ====================
+# yacs - 配置文件管理
+yacs>=0.1.8
+
+# ==================== 开发工具 ====================
+# pytest - 测试框架
+pytest>=6.0.0
+
+# termcolor - 终端颜色输出
+termcolor>=1.1.0
+
+# packaging - 版本管理
+packaging>=21.0
+
+# ==================== 注意事项 ====================
+# Final experiments used PyTorch 1.13.0+cu117 on a compatible CUDA host.
+# 先安装 CUDA 11.7 对应的 PyTorch，再安装其余依赖。
+# ==================== 快速安装命令 ====================
+# 基础环境（推荐）
+# pip install -r requirements.txt
+#
+# 完整环境（包括PyTorch）
+# pip install torch==1.13.0+cu117 torchvision==0.14.0+cu117 --extra-index-url https://download.pytorch.org/whl/cu117
+# pip install -r requirements.txt
